@@ -1,6 +1,6 @@
 #include <complex>
-#define CURR(P, i) (P[i])
-#define NEXT(P, i) (P[(i + 1) % P.size()])
+#define CURR(P, i) (P[(i) % P.size()])
+#define NEXT(P, i) (P[((i) + 1) % P.size()])
 
 typedef complex<double> Point;
 typedef vector<Point> Polygon;

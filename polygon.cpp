@@ -20,3 +20,43 @@ int contains(const Polygon& P, const Point& p) {
   }
   return in ? IN : OUT;
 }
+
+//多角形の相似判定
+bool isSimilar(const Polygon& P, const Polygon& Q){
+  const int n = P.size();
+  if(Q.size() != n) return false;
+  vector<double> d1(n), d2(n);
+  for(int i = 0; i < n; i++){
+    d1[i] = sqrt(NEXT(P,i) - CURR(P,i));
+    d2[i] = sqrt(NEXT(Q,i) - CURR(Q,i));
+  }
+  for(int i = 0; i < n; i++){
+    for(int j = 0; j <= n; j++){
+      if(j == n) return true;
+      if(abs(NEXT(d1, i)/NEXT(d2, i+j) - CURR(d1, i)/CURR(d2, i+j)) > EPS){
+        break;
+      }
+    }
+  }
+  return false;
+}
+
+//多角形の合同判定
+bool isCongruence(const Polygon& P, const Polygon& Q){
+  const int n = P.size();
+  if(Q.size() != n) return false;
+  vector<double> d1(n), d2(n);
+  for(int i = 0; i < n; i++){
+    d1[i] = sqrt(NEXT(P,i) - CURR(P,i));
+    d2[i] = sqrt(NEXT(Q,i) - CURR(Q,i));
+  }
+  for(int i = 0; i < n; i++){
+    for(int j = 0; j <= n; j++){
+      if(j == n) return true;
+      if(abs(CURR(d1, i) - CURR(d2, i+j)) > EPS){
+        break;
+      }
+    }
+  }
+  return false;
+}
