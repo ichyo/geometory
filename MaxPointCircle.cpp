@@ -1,3 +1,4 @@
+// 半径rの円で囲める点の個数の最大値
 // O(n^2logn)
 int maxPointCircle(const vector<Point> &points, double r) {
   const int n = points.size();
