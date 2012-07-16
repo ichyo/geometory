@@ -60,3 +60,18 @@ bool isCongruence(const Polygon& P, const Polygon& Q){
   }
   return false;
 }
+
+//pをm中心にtだけ回転
+Point rotate(Point p, Point m, double t){
+  p -= m;
+  p = Point(p.real() * cos(t) - p.imag() * sin(t),
+            p.real() * sin(t) + p.imag() * cos(t));
+  return p + m;
+}
+//Pをm中心にtだけ回転
+Polygon rotate(Polygon P, Point m, double t){
+  REP(i, P.size()){
+    P[i] = rotate(P[i], m, t);
+  }
+  return P;
+}
