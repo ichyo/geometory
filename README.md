@@ -1,7 +1,7 @@
-#GEOMETORY
+## GEOMETORY
 ICPCのための幾何ライブラリです，
 
-#TODO
+## TODO
 * 円の交差判定
 * 直線と円,円と円の交点
 * 多角形,角の内外判定
@@ -12,7 +12,7 @@ ICPCのための幾何ライブラリです，
 * 符号付き角度
 * 内心外心
 
-#Refference
+## Refference
 * http://133.31.121.94/complex.html
 * http://topcoder.g.hatena.ne.jp/not522/
 * http://www5d.biglobe.ne.jp/~noocyte/Programming/Geometry/RotationDirection.html#GetAngle
